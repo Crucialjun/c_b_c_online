@@ -6,20 +6,22 @@ class OnboardingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OnboardingPageViewItem page1 = OnboardingPageViewItem(
-        title: "Title 1",
-        description: "Title 1 decription",
-        imageUrl: "imageUrl");
-    OnboardingPageViewItem page2 = OnboardingPageViewItem(
-        title: "Title 1",
-        description: "Title 1 decription",
-        imageUrl: "imageUrl");
-    OnboardingPageViewItem page3 = OnboardingPageViewItem(
-        title: "Title 1",
-        description: "Title 1 decription",
-        imageUrl: "imageUrl");
     return Container(
-      child: Column(children: const []),
+      child: PageView(
+        children: const [],
+      ),
+    );
+  }
+
+  Widget OnboardingPageViewHolder(
+    OnboardingPageViewItem item,
+  ) {
+    return Column(
+      children: [
+        Text(item.title),
+        Text(item.description),
+        Image.asset("imageUrl"),
+      ],
     );
   }
 }
