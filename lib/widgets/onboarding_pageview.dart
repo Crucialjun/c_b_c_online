@@ -1,18 +1,22 @@
-import 'dart:convert';
-
+import 'package:c_b_c_online/controllers/onboarding_controller.dart';
 import 'package:c_b_c_online/models/onboarding_pageview_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class OnboardingPageView extends StatelessWidget {
+class OnboardingPageView extends ConsumerWidget {
   const OnboardingPageView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.read(onboardingControllerProvider).loadItems(context);
+    List<OnboardingPageViewItem> items =
+        ref.read(onboardingControllerProvider).items;
     return Container(
-      child: PageView(
-        children: const [],
-      ),
-    );
+        child: PageView.builder(
+            itemCount: ref.read(onboardingControllerProvider).items.length,
+            itemBuilder: ((context, index) {
+              return onboardingPageViewHolder(items[index]);
+            })));
   }
 
   Widget onboardingPageViewHolder(
@@ -25,13 +29,5 @@ class OnboardingPageView extends StatelessWidget {
         Image.asset("imageUrl"),
       ],
     );
-  }
-
-  void loadItems(BuildContext context) async {
-    String data = await DefaultAssetBundle.of(context)
-        .loadString('assets/jsons/onboarding_items.json');
-    Iterable i = json.decode(data);
-    List<OnboardingPageViewItem> items =
-        i.map((model) => OnboardingPageViewItem.fromMap(model)).toList();
   }
 }

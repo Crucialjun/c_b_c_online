@@ -1,4 +1,5 @@
 import 'package:c_b_c_online/utils/global_constants.dart';
+import 'package:c_b_c_online/widgets/onboarding_pageview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,6 +37,9 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   Text("Skip")
                 ],
+              ),
+              const Expanded(
+                child: OnboardingPageView(),
               )
             ],
           ),
