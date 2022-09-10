@@ -36,6 +36,7 @@ dependencies:
   flutter_svg: ^1.1.1+1
   google_fonts: ^3.0.1
   flutter_riverpod: ^1.0.4
+  dots_indicator: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,7 @@ flutter:
   assets:
     - assets/
     - assets/jsons/
+    - assets/svgs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
