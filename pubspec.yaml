@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_riverpod: ^1.0.4
   dots_indicator: ^2.1.0
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:

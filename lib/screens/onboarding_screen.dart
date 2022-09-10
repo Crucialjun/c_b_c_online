@@ -1,10 +1,11 @@
 import 'package:c_b_c_online/controllers/onboarding_controller.dart';
+import 'package:c_b_c_online/utils/app_colors.dart';
 import 'package:c_b_c_online/utils/global_constants.dart';
 import 'package:c_b_c_online/widgets/onboarding_pageview.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class OnboardingScreen extends ConsumerStatefulWidget {
 }
 
 class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
+  final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,31 +42,65 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 );
               }
               return SafeArea(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          appName,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            appName,
+                            style: TextStyle(
+                              color: AppColors.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
+                          Text(
+                            "Skip",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.primaryColorLight,
+                                fontSize: 14),
+                          )
+                        ],
+                      ),
+                      Expanded(
+                        child: OnboardingPageView(
+                          pageController: _pageController,
                         ),
-                        Text("Skip")
-                      ],
-                    ),
-                    const Expanded(
-                      child: OnboardingPageView(),
-                    ),
-                    DotsIndicator(
-                        position: ref
-                            .watch(onboardingControllerProvider)
-                            .currentPage
-                            .toDouble(),
-                        dotsCount:
-                            ref.read(onboardingControllerProvider).items.length)
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      SmoothPageIndicator(
+                          effect: const SlideEffect(
+                              activeDotColor: AppColors.primaryColorLight,
+                              dotHeight: 10),
+                          controller: _pageController,
+                          count: ref
+                              .read(onboardingControllerProvider)
+                              .items
+                              .length),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: AppColors.primaryColor),
+                          onPressed: (() {}),
+                          child: const Text("Create Account")),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              side: const BorderSide(
+                                  width: 1, color: AppColors.primaryColor),
+                              onPrimary: AppColors.primaryColor,
+                              primary: Colors.white),
+                          onPressed: (() {}),
+                          child: const Text("I already have an account"))
+                    ],
+                  ),
                 ),
               );
             })));
