@@ -48,8 +48,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             appName,
                             style: TextStyle(
                               color: AppColors.primaryColor,
@@ -57,12 +57,17 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
-                            "Skip",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.primaryColorLight,
-                                fontSize: 14),
+                          InkWell(
+                            onTap: () {
+                              _pageController.jumpToPage(4);
+                            },
+                            child: const Text(
+                              "Skip",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.primaryColorLight,
+                                  fontSize: 14),
+                            ),
                           )
                         ],
                       ),
