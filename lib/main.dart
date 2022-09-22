@@ -1,4 +1,5 @@
 import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart';
+import 'package:c_b_c_online/global_utils/error_screen.dart';
 import 'package:c_b_c_online/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lexendDeca().fontFamily,
       ),
       onGenerateRoute: ((settings) => generateRoute(settings)),
+      onUnknownRoute: ((settings) => MaterialPageRoute(
+          builder: (_) => const ErrorScreen(errorMsg: "Unknown Route"))),
       home: const OnboardingScreen(),
     );
   }
