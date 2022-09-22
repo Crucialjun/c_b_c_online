@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:c_b_c_online/models/onboarding_pageview_item.dart';
+import 'package:c_b_c_online/features/onboarding/models/onboarding_pageview_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

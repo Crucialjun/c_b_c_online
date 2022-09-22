@@ -1,13 +1,15 @@
-import 'package:c_b_c_online/controllers/onboarding_controller.dart';
-import 'package:c_b_c_online/utils/app_colors.dart';
-import 'package:c_b_c_online/utils/global_constants.dart';
-import 'package:c_b_c_online/widgets/onboarding_pageview.dart';
+import 'package:c_b_c_online/features/onboarding/controllers/onboarding_controller.dart';
+import 'package:c_b_c_online/features/onboarding/screens/sign_up_screen.dart';
+import 'package:c_b_c_online/features/onboarding/widgets/onboarding_pageview.dart';
+import 'package:c_b_c_online/global_utils/app_colors.dart';
+import 'package:c_b_c_online/global_utils/global_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
+  static const routeName = "/onboarding_screen";
   const OnboardingScreen({Key? key}) : super(key: key);
 
   @override
@@ -94,7 +96,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: AppColors.primaryColor),
-                          onPressed: (() {}),
+                          onPressed: (() {
+                            Navigator.pushNamedAndRemoveUntil(context,
+                                SignUpScreen.routeName, ((route) => false));
+                          }),
                           child: const Text("Create Account")),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(

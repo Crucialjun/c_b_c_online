@@ -1,4 +1,5 @@
-import 'package:c_b_c_online/screens/onboarding_screen.dart';
+import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart';
+import 'package:c_b_c_online/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'CBC Online',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: GoogleFonts.lexendDeca().fontFamily,
       ),
+      onGenerateRoute: ((settings) => generateRoute(settings)),
       home: const OnboardingScreen(),
     );
   }
