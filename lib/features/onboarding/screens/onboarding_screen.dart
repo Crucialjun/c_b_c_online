@@ -1,5 +1,5 @@
 import 'package:c_b_c_online/features/onboarding/controllers/onboarding_controller.dart';
-import 'package:c_b_c_online/features/onboarding/screens/sign_up_screen.dart';
+import 'package:c_b_c_online/features/signup_signin/screens/sign_up_screen.dart';
 import 'package:c_b_c_online/features/onboarding/widgets/onboarding_pageview.dart';
 import 'package:c_b_c_online/global_utils/app_colors.dart';
 import 'package:c_b_c_online/global_utils/global_constants.dart';

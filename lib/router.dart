@@ -1,5 +1,5 @@
 import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart';
-import 'package:c_b_c_online/features/onboarding/screens/sign_up_screen.dart';
+import 'package:c_b_c_online/features/signup_signin/screens/sign_up_screen.dart';
 import 'package:c_b_c_online/global_utils/error_screen.dart';
 import 'package:flutter/material.dart';
 
