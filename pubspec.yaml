@@ -38,6 +38,9 @@ dependencies:
   flutter_riverpod: ^1.0.4
   dots_indicator: ^2.1.0
   smooth_page_indicator: ^1.0.0+2
+  firebase_core: ^1.24.0
+  firebase_auth: ^3.11.0
+  lottie: ^1.4.3
 
 dev_dependencies:
   flutter_test:

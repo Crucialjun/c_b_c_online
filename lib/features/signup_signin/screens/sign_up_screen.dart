@@ -1,4 +1,5 @@
 import 'package:c_b_c_online/features/signup_signin/widgets/social_buttons.dart';
+import 'package:c_b_c_online/features/signup_signin/widgets/textfield_decoration.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -27,54 +28,121 @@ class _SignUpScreenState extends State<SignUpScreen> {
             //const SizedBox(height: 24),
             const Text(
               "Sign Up",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
-              height: 16,
+              height: 48,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const SocialButton(socialName: "facebook"),
-                ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 154, 72, 235),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/pngs/google_icon.png",
-                            width: 32,
-                            height: 32,
-                          ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          const Text("Google")
-                        ],
-                      ),
-                    ))
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                SocialButton(socialName: "facebook"),
+                SocialButton(socialName: "google"),
+              ],
+            ),
+            const SizedBox(
+              height: 36,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black),
+                decoration: const TextFieldsDecoration(
+                    inputHintText: "Username", inputIcon: Icons.person),
+              ),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black),
+                decoration: const TextFieldsDecoration(
+                    inputHintText: "Email", inputIcon: Icons.email_outlined),
+              ),
+            ),
+
+            const SizedBox(
+              height: 4,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black),
+                decoration: const TextFieldsDecoration(
+                    inputHintText: "Password", inputIcon: Icons.lock),
+              ),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black),
+                decoration: const TextFieldsDecoration(
+                    inputHintText: "Confirm Password", inputIcon: Icons.lock),
+              ),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(300, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16))),
+                  onPressed: () {},
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text("Create Account"),
+                  )),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Row(
+              children: const [
+                Expanded(
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: 2.0,
+                  ),
+                ),
+                SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  "Or",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 4,
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: 2.0,
+                  ),
+                ),
               ],
             ),
             const SizedBox(
               height: 24,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: "Username",
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
-                    color: Colors.black,
-                    width: 1.0,
-                  ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text("Already have an account? "),
+                Text(
+                  "Log in",
+                  style: TextStyle(color: Colors.blue),
                 ),
-              ),
+              ],
             )
           ]),
         ),

@@ -1,3 +1,4 @@
+import 'package:c_b_c_online/global_utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
@@ -9,6 +10,8 @@ class SocialButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
+            backgroundColor:
+                socialName == 'facebook' ? Colors.blue : Colors.purple,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18))),
         child: Padding(
@@ -17,14 +20,14 @@ class SocialButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/pngs/facebook_icon.png",
+                "assets/pngs/${socialName}_icon.png",
                 width: 32,
                 height: 32,
               ),
               const SizedBox(
                 width: 4,
               ),
-              Text(socialName)
+              Text(socialName.capitalizeFirstLetter())
             ],
           ),
         ));

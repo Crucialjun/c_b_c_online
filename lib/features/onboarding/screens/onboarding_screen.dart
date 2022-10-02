@@ -95,7 +95,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: AppColors.primaryColor),
+                              backgroundColor: AppColors.primaryColor),
                           onPressed: (() {
                             Navigator.pushNamedAndRemoveUntil(context,
                                 SignUpScreen.routeName, ((route) => false));
@@ -105,8 +105,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                           style: ElevatedButton.styleFrom(
                               side: const BorderSide(
                                   width: 1, color: AppColors.primaryColor),
-                              onPrimary: AppColors.primaryColor,
-                              primary: Colors.white),
+                              foregroundColor: AppColors.primaryColor,
+                              backgroundColor: Colors.white),
                           onPressed: (() {}),
                           child: const Text("I already have an account"))
                     ],

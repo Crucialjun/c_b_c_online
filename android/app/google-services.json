@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "793346710677",
+    "project_id": "cbc-joint",
+    "storage_bucket": "cbc-joint.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793346710677:android:5147d825a1108b21d98f9c",
+        "android_client_info": {
+          "package_name": "com.example.c_b_c_online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793346710677-nh02f621oh6ek5o6992ijjveft7u2onf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiE1m8t95vagOH1VUwQZXsJq63iOhicSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793346710677-nh02f621oh6ek5o6992ijjveft7u2onf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
