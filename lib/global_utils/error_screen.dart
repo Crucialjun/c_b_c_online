@@ -13,6 +13,7 @@ class ErrorScreen extends StatelessWidget {
         appBar: CustomAppBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Lottie.asset('assets/jsons/404_error.json'),
             Text(

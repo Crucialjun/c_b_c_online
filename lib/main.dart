@@ -2,6 +2,7 @@ import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart'
 import 'package:c_b_c_online/firebase/firebase_authentication.dart';
 import 'package:c_b_c_online/firebase_options.dart';
 import 'package:c_b_c_online/global_utils/error_screen.dart';
+import 'package:c_b_c_online/global_utils/loading_screen.dart';
 import 'package:c_b_c_online/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -37,9 +38,9 @@ class MyApp extends ConsumerWidget {
           }
           return null;
         }, error: ((error, stackTrace) {
-          return null;
+          return ErrorScreen(errorMsg: error.toString());
         }), loading: () {
-          return null;
+          return const LoadingScreen();
         }));
   }
 }
