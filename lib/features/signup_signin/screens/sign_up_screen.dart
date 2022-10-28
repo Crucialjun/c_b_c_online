@@ -1,6 +1,7 @@
 import 'package:c_b_c_online/features/signup_signin/widgets/social_buttons.dart';
 import 'package:c_b_c_online/features/signup_signin/widgets/textfield_decoration.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const routeName = "/sign_up_screen";
@@ -15,9 +16,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
         toolbarHeight: 0.0,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: Colors.white,
+
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+          statusBarBrightness: Brightness.light, // For iOS (dark icons)
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
