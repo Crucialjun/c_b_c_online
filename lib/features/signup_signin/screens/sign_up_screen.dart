@@ -2,16 +2,17 @@ import 'package:c_b_c_online/features/signup_signin/widgets/social_buttons.dart'
 import 'package:c_b_c_online/features/signup_signin/widgets/textfield_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends ConsumerStatefulWidget {
   static const routeName = "/sign_up_screen";
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  ConsumerState<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   final _signupFormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,20 @@
+import 'package:c_b_c_online/features/signup_signin/controllers/sign_up_controller.dart';
 import 'package:c_b_c_online/global_utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SocialButton extends StatelessWidget {
+class SocialButton extends ConsumerWidget {
   final String socialName;
   const SocialButton({super.key, required this.socialName});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          socialName == 'facebook'
+              ? ref.read(signupControllerProvider).loginWithFacebook()
+              : print("social button pressed");
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor:
                 socialName == 'facebook' ? Colors.blue : Colors.purple,
