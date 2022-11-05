@@ -1,3 +1,4 @@
+import 'package:c_b_c_online/features/dashboard/screens/main_dashboard.dart';
 import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart';
 import 'package:c_b_c_online/firebase/firebase_authentication.dart';
 import 'package:c_b_c_online/firebase_options.dart';
@@ -35,8 +36,9 @@ class MyApp extends ConsumerWidget {
         home: ref.watch(userAutheProvider).when(data: (user) {
           if (user == null) {
             return const OnboardingScreen();
+          } else {
+            return const MainDashboard();
           }
-          return null;
         }, error: ((error, stackTrace) {
           return ErrorScreen(errorMsg: error.toString());
         }), loading: () {

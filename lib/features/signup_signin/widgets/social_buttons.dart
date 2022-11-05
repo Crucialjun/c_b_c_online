@@ -12,7 +12,7 @@ class SocialButton extends ConsumerWidget {
     return ElevatedButton(
         onPressed: () {
           socialName == 'facebook'
-              ? ref.read(signupControllerProvider).loginWithFacebook()
+              ? ref.read(signupControllerProvider).loginWithFacebook(context)
               : print("social button pressed");
         },
         style: ElevatedButton.styleFrom(

@@ -1,3 +1,4 @@
+import 'package:c_b_c_online/features/dashboard/screens/main_dashboard.dart';
 import 'package:c_b_c_online/features/onboarding/screens/onboarding_screen.dart';
 import 'package:c_b_c_online/features/signup_signin/screens/sign_up_screen.dart';
 import 'package:c_b_c_online/global_utils/error_screen.dart';
@@ -9,6 +10,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const OnboardingScreen());
     case SignUpScreen.routeName:
       return MaterialPageRoute(builder: (_) => const SignUpScreen());
+    case MainDashboard.routeName:
+      return MaterialPageRoute(builder: (_) => const MainDashboard());
     default:
       return MaterialPageRoute(
           builder: (_) =>
