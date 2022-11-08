@@ -8,6 +8,11 @@ class SignupController {
     await FirebaseAuthentication(FirebaseAuth.instance)
         .signInWithFacebook(context);
   }
+
+  Future loginWithGoogle(BuildContext context) async {
+    await FirebaseAuthentication(FirebaseAuth.instance)
+        .signInWithGoogle(context);
+  }
 }
 
 final signupControllerProvider = Provider(((ref) {
