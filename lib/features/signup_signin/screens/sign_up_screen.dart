@@ -62,6 +62,15 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   style: const TextStyle(color: Colors.black),
                   decoration: const TextFieldsDecoration(
                       inputHintText: "Username", inputIcon: Icons.person),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please Enter your Username";
+                    } else if (value.contains(' ')) {
+                      return 'Username cannot contains spaces';
+                    }
+                    return null;
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
               ),
               const SizedBox(
@@ -108,7 +117,11 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         minimumSize: const Size(300, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16))),
-                    onPressed: () {},
+                    onPressed: () {
+                      if (_signupFormKey.currentState!.validate()) {
+                        print("create account");
+                      }
+                    },
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text("Create Account"),
